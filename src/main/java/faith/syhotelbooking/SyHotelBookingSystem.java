@@ -320,10 +320,10 @@ public class SyHotelBookingSystem {
         gbc.fill = GridBagConstraints.HORIZONTAL;
         
         JTextField guestNameField = createStyledTextField();
-        JComboBox<String> roomTypeBox = new JComboBox<>(new String[]{"Standard Single - $99/night", 
-                                                                     "Standard Double - $149/night", 
-                                                                     "Deluxe Suite - $299/night", 
-                                                                     "Presidential Suite - $599/night"});
+        JComboBox<String> roomTypeBox = new JComboBox<>(new String[]{"Standard Single",
+                                                                     "Standard Double",
+                                                                     "Deluxe Suite",
+                                                                     "Presidential Suite"});
         roomTypeBox.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         
         JTextField checkInField = createStyledTextField();
