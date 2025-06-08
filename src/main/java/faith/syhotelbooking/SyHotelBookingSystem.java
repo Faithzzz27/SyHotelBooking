@@ -56,6 +56,7 @@ public class SyHotelBookingSystem {
             mainPanel.add(createReservationPanel(), "Reservation");
             mainPanel.add(createViewReservationsPanel(), "ViewReservations");
 
+
             frame.add(mainPanel);
             frame.setVisible(true);
         });
@@ -256,7 +257,7 @@ public class SyHotelBookingSystem {
         logoutBtn.setPreferredSize(new Dimension(100, 35));
         logoutBtn.addActionListener(e -> {
             currentUser = null;
-            layout.show(mainPanel, "Login");
+            layout.show(SyHotelBookingSystem.mainPanel, "Login");
         });
         
         headerPanel.add(welcomeLabel, BorderLayout.CENTER);
@@ -438,7 +439,8 @@ public class SyHotelBookingSystem {
         button.setFocusPainted(false);
         button.setCursor(new Cursor(Cursor.HAND_CURSOR));
         button.setPreferredSize(new Dimension(200, 40));
-        
+        // Override UI delegate colors
+        button.setUI(new javax.swing.plaf.basic.BasicButtonUI());
         // Add hover effect
         button.addMouseListener(new MouseAdapter() {
             @Override
@@ -508,7 +510,7 @@ public class SyHotelBookingSystem {
             if (rs.next()) {
                 currentUser = username;
                 showSuccessMessage("Login successful! Welcome " + (rs.getString("full_name") != null ? rs.getString("full_name") : username));
-                layout.show(mainPanel, "Dashboard");
+                layout.show(SyHotelBookingSystem.mainPanel, "Dashboard");
             } else {
                 showErrorMessage("Invalid username or password.");
             }
@@ -540,7 +542,7 @@ public class SyHotelBookingSystem {
             pstmt.close();
             
             showSuccessMessage("Registration successful! Please login.");
-            layout.show(mainPanel, "Login");
+            layout.show(SyHotelBookingSystem.mainPanel, "Login");
             
         } catch (SQLException e) {
             if (e.getMessage().contains("UNIQUE constraint failed")) {
@@ -617,7 +619,7 @@ public class SyHotelBookingSystem {
                 );
                 
                 showSuccessMessage(message);
-                layout.show(mainPanel, "Dashboard");
+                layout.show(SyHotelBookingSystem.mainPanel, "Dashboard");
             }
             
             userRs.close();
