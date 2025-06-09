@@ -30,9 +30,9 @@ public class SyHotelBookingSystem {
     private static Connection connection;
     private static String currentUser = null;
 
-    private static final Color PRIMARY_COLOR = new Color(41, 128, 185);
-    private static final Color SECONDARY_COLOR = new Color(52, 73, 94);
-    private static final Color ACCENT_COLOR = new Color(231, 76, 60);
+    private static final Color PRIMARY_COLOR = new Color(66, 0, 245);
+    private static final Color SECONDARY_COLOR = new Color(50, 75, 94);
+    private static final Color ACCENT_COLOR = new Color(61, 10, 44);
     private static final Color SUCCESS_COLOR = new Color(39, 174, 96);
     private static final Color BACKGROUND_COLOR = new Color(236, 240, 241);
     private static final Color TEXT_COLOR = new Color(44, 62, 80);
